@@ -16,52 +16,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <style>
-        body {
-            background-color: #f6f5f5;
-            font-family: Montserrat;
-        }
-
-        .monCouleur {
-            color: #0C74D3;
-        }
-
-        .monBag {
-            background-color: #F8FDFC;
-        }
-
-        .maPolice{
-            font-size: 13px;
-        }
-        .maPolice2{
-            font-size: 12px;
-        }
-        .coulNote{
-            color: #FB9C0F;
-        }
-        
-        @media (min-width: 992px) {
-            .marg {
+        <style>
+            body.light-theme {
+        background-color: #F6F5F5;
+        color: black;
+    }
+    
+    body.dark-theme {
+        background-color: black;
+        color: white;
+    }
+    
+    .monCouleur {
+        color: #0C74D3;
+    }
+    
+    body.light-theme .monBag2 {
+        color: black; /* Couleur du texte en mode clair */
+        background-color: white;
+    }
+    
+    body.dark-theme .monBag {
+        color: white !important; /* Couleur du texte en mode sombre */
+        background-color: #1E1E1E;
+    }
+    
+    body.light-theme #lien{
+        color: black; /* Couleur du texte en mode clair */
+        background-color: white !important;
+    }
+    body.light-theme .maPolice{
+        color: black; /* Couleur du texte en mode clair */
+    }
+    
+    body.dark-theme .monBag2 {
+        color: white; /* Couleur du texte en mode sombre */
+        background-color: white;
+    }
+    
+    
+    .maPolice {
+        font-size: 15px;
+    }
+    
+    .maPolice2 {
+        font-size: 13px;
+    }
+    .maPolice3 {
+        font-size: 11px;
+    }
+    .t-dark{}
+    @media (min-width: 992px) {
+        .marg {
             margin-left: 250px;
         }
-            .contente {
-                margin-left: 225px;
-            }
-
-            .contente2 {
-                height: 78vh;
-            }
+    
+        .contente {
+            margin-left: 225px;
         }
-       body{
-       
-       }
+    
+        .contente2 {
+            height: 78vh;
+        }
+    }
+    
+    body {
+        background-color: black;
+        color: white;
+    }
+    
+    .monButton {
+        border: none;
+        border-radius: 30px;
+        color: white;
+        height: 40px;
+    }
+    
+    .bg-2 {
+        background-image: url(i/Rectangle\ 15.svg);
+    }
+    .monLien{
+        color: white;
+    }
+    .monLien2{
+        color: black;
+    }
+    .coulNote{
+        color: #FB9C0F;
+    }
     </style>
+   
 </head>
 
-<body>
+<body id="monBody" class="dark-theme">
     <header class="sticky-top">
         <!-- place navbar here -->
-        <nav class="navbar monBag  shadow-sm">
+        <nav class="navbar monBag  shadow-sm" id="monBG" >
             <div class="container-fluid">
                 <div>
                     <img src="i/LearnShare.png" alt="">
@@ -74,10 +124,11 @@
                     </div>
                 </div>
                 <div>
-                    <i class="ri-search-line fs-3 d-lg-none text-white"></i>
-                    <i class="ri-add-circle-line fs-3 text-white"></i>
-                    <i class="ri-settings-5-line fs-3 text-white"></i>
-                    <i class="ri-notification-4-fill fs-3 text-white"></i>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                      </div>
+                      
                 </div>
             </div>
         </nav>
@@ -86,52 +137,49 @@
         <div class="container-fluid ">
             <div class="row py-3 d-flex justify-content-between ">
                 <div class="col-2 d-none d-lg-block col-lg-2 monBag shadow-sm"
-                    style="height: 100vh; position: fixed; left: 0; bottom: 0">
-                    <div class="row">
-                        <div class="col-12 px-4 py-3">
-                            <img src="../image/Logo-Sonatel-Academy-480_1-1.png" class="img-fluid d-none d-lg-block"
-                                style="height: 60px" alt="" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 d-flex gap-2" style="margin-left: 10px">
-                            <div><i class="ri-subtract-line"></i></div>
-                            <p class="m-0">MENU</p>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <nav>
-                                <ul class="d-flex flex-column gap-3 justify-content-start justify-content-lg-middle">
-                                    <li class="d-flex gap-3">
-                                        <i class="ri-menu-3-line"></i>
-                                        <a href="#" class="text-decoration-none text-black d-none d-lg-block">Home</a>
-                                    </li>
-                                    <li class="d-flex gap-3">
-                                        <i class="ri-file-list-3-line"></i>
-                                        <a href="#" class="text-decoration-none text-black d-none d-lg-block">School</a>
-                                    </li>
-                                    <li class="d-flex gap-3">
-                                        <i class="ri-group-line"></i>
-                                        <a href="#" class="text-decoration-none text-black d-none d-lg-block">Classe</a>
-                                    </li>
-                                    <li class="d-flex gap-3">
-                                        <i class="ri-group-line"></i>
-                                        <a href="#" class="text-decoration-none text-black d-none d-lg-block">Docs</a>
-                                    </li>
-                                    <li class="d-flex gap-3">
-                                        <i class="ri-group-line"></i>
-                                        <a href="#" class="text-decoration-none text-black d-none d-lg-block">Coach</a>
-                                    </li>
-                                    <li class="d-flex gap-3">
-                                        <i class="ri-calendar-2-line"></i>
-                                        <a href="#" class="text-decoration-none text-black d-none d-lg-block">Lives</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                style="height: 100vh; position: fixed; left: 0; bottom: 0">
+                <div class="row">
+                    <div class="col-12 px-4 py-3">
+                        <img src="../image/Logo-Sonatel-Academy-480_1-1.png" class="img-fluid d-none d-lg-block"
+                            style="height: 60px" alt="" />
                     </div>
                 </div>
+                
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <nav>
+                            <ul class="d-flex flex-column gap-3 justify-content-start justify-content-lg-middle">
+                                <li class="d-flex gap-3" style="color: #0C74D3;">
+                                    <i class="ri-home-4-line fs-4"></i>
+                                    <a href="index.html" class="text-decoration-none fs-5 fw-semibold  d-none d-lg-block monLien" id="lien" >Home</a>
+                                </li>
+                                <li class="d-flex gap-3" style="color: #BE128E;">
+                                    <i class="ri-team-line fs-4"></i>
+                                    <a href="groupe.html" class="text-decoration-none fs-5 fw-semibold  d-none d-lg-block monLien" id="lien">Classe</a>
+                                </li>
+                                <li class="d-flex gap-3" style="color: #37ED1A;" >
+                                    <i class="ri-file-list-3-line fs-4"></i>
+                                    <a href="docs.html" class="text-decoration-none fs-5 fw-semibold d-none d-lg-block monLien" id="lien">Docs</a>
+                                </li>
+                                
+                                <li class="d-flex gap-3 fs-4" style="color: #F5600C;">
+                                    <i class="ri-video-chat-line"></i>
+                                    <a href="cours.html" class="text-decoration-none fs-5 fw-semibold d-none d-lg-block monLien" id="lien">cours</a>
+                                </li>
+                                <li class="d-flex gap-3 fs-4" style="color: #FB9C0F;">
+                                    <i class="ri-presentation-fill"></i>
+                                    <a href="coach.html" class="text-decoration-none fs-5 fw-semibold d-none d-lg-block monLien" id="lien">Coach</a>
+                                </li>
+                                <li class="d-flex gap-3 fs-4" style="color: #FF1B1B;">
+                                    <i class="ri-rfid-line"></i>
+                                    <a href="lives.html" class="text-decoration-none fs-5 fw-semibold  d-none d-lg-block monLien" id="lien">Lives</a>
+                                </li>
+                               
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
                 <div class="col-12 col-lg-6 p-3 marg ">
                     <div class="container vstack gap-2 ">
                         <div class="row">
@@ -139,20 +187,24 @@
                                 <div class="row d-flex justify-content-center">
     
                                     <div class="col-2 col-md-2 monCouleur">
-                                        <h6>videos</h6>
+                                       <a href="" class="text-decoration-none monLien ">
+                                        <h6 class="monCouleur">videos</h6>
+                                       </a>
                                         <div class="row">
                                             <hr class="w-75">
                                         </div>
                                     </div>
                                     <div class="col-3 col-md-2 ">
+                                       <a href="docs.html" class="text-decoration-none monLien" id="lien">
                                         <h6>Documents</h6>
                                         
+                                       </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row mt-4 ">
+                        <div class="row mt-1 ">
                             <div class="container-fluid ">
                                 <div class="row">
                                     <div class="col-10 col-lg-10">
@@ -179,16 +231,16 @@
                                         <div class="row d-flex justify-content-between ">
                                             <div class="col-9 col-lg-7 ">
                                                 <div class="row">
-                                                    <div class="col-3 col-lg-2 ">
+                                                    <div class="col-3 col-lg-3 ">
                                                         <img src="i/img4.png" alt="" style="width: 100%; ">
                                                     </div>
                                                     <div class="col-8  p-0 mt-0 ">
-                                                        <div class="row mt-1">
+                                                        <div class="row mt-0">
                                                             <span class="monCouleur maPolice fw-semibold d-lg fs-lg-6">Coach Seck
                                                                 <br></span>
                                                         </div>
                                                         <div class="row">
-                                                            <span class="maPolice2 fs-lg-5 ">Initiation au Design Numérique
+                                                            <span class="maPolice2 fs-lg-4 ">Initiation au Design Numérique
                                                                <span class="monCouleur">#Figma#designNumerique#Ui</span> </span>
 
                                                         </div>
@@ -237,7 +289,7 @@
                                         <div class="row d-flex justify-content-between ">
                                             <div class="col-9 col-lg-7 ">
                                                 <div class="row">
-                                                    <div class="col-3 col-lg-2 ">
+                                                    <div class="col-3 col-lg-3 ">
                                                         <img src="i/img4.png" alt="" style="width: 100%; ">
                                                     </div>
                                                     <div class="col-8  p-0 mt-0 ">
@@ -296,7 +348,7 @@
                                         <div class="row d-flex justify-content-between ">
                                             <div class="col-9 col-lg-7 ">
                                                 <div class="row">
-                                                    <div class="col-3 col-lg-2 ">
+                                                    <div class="col-3 col-lg-3 ">
                                                         <img src="i/img4.png" alt="" style="width: 100%; ">
                                                     </div>
                                                     <div class="col-8  p-0 mt-0 ">
@@ -354,7 +406,7 @@
                                         <div class="row d-flex justify-content-between ">
                                             <div class="col-9 col-lg-7 ">
                                                 <div class="row">
-                                                    <div class="col-3 col-lg-2 ">
+                                                    <div class="col-3 col-lg-3 ">
                                                         <img src="i/img4.png" alt="" style="width: 100%; ">
                                                     </div>
                                                     <div class="col-8  p-0 mt-0 ">
@@ -523,6 +575,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
