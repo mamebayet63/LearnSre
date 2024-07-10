@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <style>
              body {
@@ -110,6 +113,53 @@
 </head>
 
 <body id="monBody" class="dark-theme">
+    <!-- modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="i/img1.png" class="img-fluid" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="i/img2.png" class="img-fluid" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="i/img3.png" class="img-fluid" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <header class="sticky-top">
         <!-- place navbar here -->
         <nav class="navbar monBag  shadow-sm" id="monBG" >
@@ -185,13 +235,13 @@
                     <div class="container vstack gap-2 ">
                         <div class="row d-flex justify-content-evenly  monBag">
                             <div class="col-4 ">
-                                <img src="i/img1.png" alt="" style="width: 100%; height: 100%;">
+                                <img src="i/img1.png"  style="width: 100%; height: 100%;"   alt="Image" data-toggle="modal" data-target="#imageModal">
                             </div>
                             <div class="col-4">
-                                <img src="i/Rectangle 4.svg" alt="" style="width: 100%;height: 100%;">
+                                <img src="i/img2.png" alt="" style="width: 100%;height: 100%;" alt="Image" data-toggle="modal" data-target="#imageModal2">
                             </div>
                             <div class="col-4">
-                                <img src="i/img3.png" alt="" style="width: 100%; height: 100%;">
+                                <img src="i/img3.png" alt="" style="width: 100%; height: 100%;" alt="Image" data-toggle="modal" data-target="#imageModal3">
                             </div>
                         </div>
 
@@ -510,7 +560,7 @@
                                 <span class="fs-5 fw-semibold">Tyma</span><br>
                                 <span class="monCouleur fs-6 ">Le cours de Js est...</span>
                             </div>
-                        </div>
+                        </div> 
                         <div class="col-12 d-flex ">
                             <img src="i/Rectangle 14.svg" alt="">
                             <div class="mx-2">
